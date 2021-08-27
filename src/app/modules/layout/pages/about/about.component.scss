@@ -1,0 +1,23 @@
+.about{
+    margin: auto;
+    margin-top: 150px;
+    max-width: 1200px;
+    width: 100%;
+}
+.about-1{
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+}
+.about-info{
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
+.about-img{
+    background: url('/assets/img/fondo-card.png');
+    background-position: center center;
+    background-size: cover;
+    width: 500px;
+    height: 500px;
+}

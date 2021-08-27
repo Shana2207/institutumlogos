@@ -1,0 +1,98 @@
+.container-program{
+    margin-top: 150px;
+}
+.program{
+    text-align: center;
+    padding: 10px 0px;
+    color: #575757;
+    justify-content: center;
+    max-width: 1200px;
+    margin: auto;
+}
+.program a:link{
+    color: #575757;
+}
+.program a:visited{
+    color: #575757;
+}
+.container-bloque-cards {
+    text-align: left;
+    position: relative;
+    padding: 30px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.container-bloque-cards .cards-item {
+    margin: 10px;
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    border-radius: 20px;
+    -webkit-box-shadow: 0 0 20px rgba(153, 25, 26, 0.49);
+    box-shadow: 0 0 20px rgba(153, 25, 26, 0.49);
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+    position: relative;
+    padding: 30px;
+    z-index: 1;
+}
+.cards-content a:link{
+    color: #991914;
+}
+.cards-content a:visited{
+    color: #991914;
+}
+.container-bloque-cards .cards-item .cards-icon svg path {
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.container-bloque-cards .cards-item .cards-content h4 {
+    margin: 10px 0px;
+}
+.container-bloque-cards .cards-item .cards-content p {
+    font-size: 16px;
+    line-height: 25px;
+    margin-bottom: 10px;
+}
+.container-bloque-cards .cards-item .cards-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 20px;
+    background: url('/assets/img/fondo-card.png');
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+    -webkit-transition: all 0.3s ease-out 0s;
+    transition: all 0.3s ease-out 0s;
+}
+.container-bloque-cards .cards-item .cards-overlay::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background: rgba(153, 25, 26, 0.49);
+}
+.container-bloque-cards .cards-item:hover .cards-icon svg path {
+    fill: #fff;
+}
+.container-bloque-cards .cards-item:hover .cards-content h4, .container-bloque-cards .cards-item:hover .cards-content p, .container-bloque-cards .cards-item:hover .cards-content a {
+    color: #fff;
+}
+.container-bloque-cards .cards-item:hover .cards-overlay {
+    opacity: 1;
+    visibility: visible;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
