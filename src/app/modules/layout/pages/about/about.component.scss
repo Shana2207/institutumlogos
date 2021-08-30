@@ -1,6 +1,6 @@
 .about{
     margin: auto;
-    margin-top: 150px;
+    margin-top: 200px;
     max-width: 1200px;
     width: 100%;
 }
@@ -8,16 +8,55 @@
     justify-content: space-between;
     display: flex;
     flex-wrap: wrap;
+    padding: 30px;
 }
 .about-info{
+    margin: auto;
+    text-align: center;
     justify-content: center;
     align-items: center;
-    width: 500px;
+    width: 45%;
+    h2{
+        padding: 10px;
+    }
 }
 .about-img{
     background: url('/assets/img/fondo-card.png');
     background-position: center center;
     background-size: cover;
-    width: 500px;
-    height: 500px;
+    width: 50%;
+    height: 300px;
+}
+.container-about-2{
+    display: flex;
+    margin-top: 50px;
+    width: 100%;
+    height: 600px;
+    justify-content: left;
+    align-items: center;
+}
+.about-img-1{
+    background-image: linear-gradient(
+        rgba(153, 25, 26, 0.28),
+        rgba(153, 25, 26, 0.28)),
+        url('/assets/img/fondo-nosotros.png');
+    background-position: center top;
+    background-size: cover;
+    width: 100%;
+    height: 600px;
+    position: absolute;
+}
+.about-img-2{
+    background: url('/assets/img/conocenos.png');
+    position: relative;
+    max-width: 600px;
+    width: 100%;
+    height: 390px;
+}
+
+@media screen and (max-width: 760px){
+    .about-info, .about-img{
+        padding-bottom: 20px;
+        width: 100%;
+    }
 }

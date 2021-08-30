@@ -8,8 +8,14 @@
             </div>
             <div class="about-img"></div>
         </div>
-        <div class="about-2">
-
-        </div>
+        
     </div>
+    <div class="container-about-2">
+        <div class="about-img-1"></div>
+        <div class="about-img-2">
+        </div>
+        
+    </div>
+    <h2 (click)="colapsable1 = !colapsable1"> siempre visible</h2>
+        <p *ngIf="colapsable1">zona colapsable--</p>
 </app-main>
