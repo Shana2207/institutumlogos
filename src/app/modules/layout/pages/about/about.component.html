@@ -12,10 +12,43 @@
     </div>
     <div class="container-about-2">
         <div class="about-img-1"></div>
-        <div class="about-img-2">
+        <div class="about-seccion">
+            <div class="about-img-2"></div>
+            <div class="container-colapse">
+                <div class="colapse">
+                    <div class="colapse-block">
+                        <div class="titulo">
+                            <h2 (click)="colapsable1 = !colapsable1">Nosotros</h2>
+                        </div>
+                        <div class="info">
+                            <p *ngIf="colapsable1">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                                <br>The point of using Lorem Ipsum is that it has a more-or-less</p>
+                        </div>
+                    </div>
+                    <div class="colapse-block">
+                        <div class="titulo">
+                            <h2 (click)="colapsable2 = !colapsable2">Nosotros</h2>
+                        </div>
+                        <div class="info">
+                            <p *ngIf="colapsable2">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                                <br>The point of using Lorem Ipsum is that it has a more-or-less</p>
+                        </div>
+                    </div>
+                    <div class="colapse-block">
+                        <div class="titulo">
+                            <h2 (click)="colapsable3 = !colapsable3">Nosotros</h2>
+                        </div>
+                        <div class="info">
+                            <p *ngIf="colapsable3">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. 
+                                <br>The point of using Lorem Ipsum is that it has a more-or-less</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
     </div>
-    <h2 (click)="colapsable1 = !colapsable1"> siempre visible</h2>
-        <p *ngIf="colapsable1">zona colapsable--</p>
+    
+    
+       
 </app-main>

@@ -29,6 +29,7 @@
 }
 .container-about-2{
     display: flex;
+    flex-wrap: wrap;
     margin-top: 50px;
     width: 100%;
     height: 600px;
@@ -48,15 +49,40 @@
 }
 .about-img-2{
     background: url('/assets/img/conocenos.png');
+    background-size: cover;
     position: relative;
     max-width: 600px;
     width: 100%;
     height: 390px;
 }
-
+.container-colapse{
+    margin: 0px auto;
+    max-width: 800px;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+.colapse{
+   
+    position: relative;
+    padding: 10px;
+}
+.colapse-block{
+    margin: 10px;
+    color: white;
+    padding: 20px;
+    background-color: #991914;
+    border-radius: 10px;
+}
+.info p{
+    padding: 10px 0px;
+}
 @media screen and (max-width: 760px){
     .about-info, .about-img{
         padding-bottom: 20px;
+        width: 100%;
+    }
+    .container-colapse{
         width: 100%;
     }
 }
