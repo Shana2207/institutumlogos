@@ -1,0 +1,85 @@
+.bloque-program{
+    padding: 20px;
+    margin: auto;
+    max-width: 1200px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 150px;
+    text-align: center;
+}
+.bloque-program h2{
+    padding: 20px 0px;
+}
+.volver{
+    justify-content: left;
+    align-items: center;
+    margin: 20px;
+    text-align: left;
+}
+.volver a:link{
+    color: #575757;
+}
+.volver a:visited{
+    color: #575757;
+}
+.banner{
+    background-image: url('/assets/img/fondo-card.png');
+    background-position: center center;
+    background-size: cover;
+    height: 500px;
+}
+.textos{
+    text-align: left;
+    justify-content: space-between;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px 0px;
+}
+.info{
+    width: 60%;
+}
+.info-def{
+    padding: 10px 0px;
+}
+.info-def h2{
+    color: #EDAF37;
+}
+.info-def ul{
+    padding: 0px 30px;
+}
+.cuadro-info{
+    border: 1px solid #991914;
+    width: 35%;
+}
+.cuadro-info-1{
+    padding: 20px 20px;
+    padding-top: 0px;
+}
+.cuadro-info-1 ul{
+    padding: 0px 20px;
+}
+.line{
+    margin: auto;
+    border-bottom: 1px solid #991914;
+    width: 90%;
+}
+.btn-plan{
+    margin: auto;
+    color: #fff;
+    max-width: 150px;
+    width: 100%;
+    background-color: #8B3734;
+    border-radius: 10px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+.btn-plan p{
+    padding: 10px;
+}
+@media screen and (max-width: 760px){
+    .info, .cuadro-info{
+        padding-bottom: 20px;
+        width: 100%;
+    }
+}
