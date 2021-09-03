@@ -29,21 +29,23 @@ https://www.youtube.com/watch?v=TnKbhklesJY
         background-image: url('/assets/img/banner1.png');
         z-index: 3;
         animation: slide1 15s infinite;
+        width: 100%;
     }
 
     &:nth-child(2){
         background-image: url('/assets/img/banner2.png');
         z-index: 2;
         animation: slide2 15s infinite;
-        animation-delay: 5s
-
+        animation-delay: 5s;
+        width: 100%;
     }
 
     &:nth-child(3){
         background-image: url('/assets/img/banner3.png');
         z-index: 1;
         animation: slide3 15s infinite;
-        animation-delay: 10s
+        animation-delay: 10s;
+        width: 100%;
     }
 
 

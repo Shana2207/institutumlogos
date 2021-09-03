@@ -12,10 +12,6 @@ header{
     transition: all 300ms;
 }
 
-.move-content{
-    right: 180px;
-}
-
 .container-header{
     max-width: 1200px;
     height: 100%;
@@ -49,7 +45,6 @@ nav{
 nav ul{
     height: 100%;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
@@ -69,8 +64,6 @@ nav ul li a{
         color: #fff;
     }
 }
-
-
 
 .nav-mod{
     height: 100px;
@@ -111,18 +104,30 @@ nav ul li a{
         height: 100%;
         position: fixed;
         top: 0;
-        right: -180px;
+        right: -150px;
         padding: 0 50px;
         transition: all 300ms;
     }
     .move-nav{
         right: 0;
+        background-color: #991914;
+        box-shadow: 1px 1px 10px 0px #575757;
+        position: fixed;
+        z-index: -1;
     }
     nav ul{
+        padding-top: 100px;
         flex-direction: column;
     }
     nav ul li{
         margin: 20px 0px;
     }
-
+    nav ul li a{
+        color: #fff;
+        &:hover{
+            background-color: #fff;
+            color: #575757;
+        }
+    }
+    
 }
