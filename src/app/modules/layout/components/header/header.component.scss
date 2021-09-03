@@ -1,6 +1,10 @@
 header{
     width: 100%;
-    height: 80px;
+    height: 100px;
+    /**/
+    box-shadow: 1px 1px 10px 0px #575757;
+    background-color: white;
+    /**/
     position: fixed;
     top: 0;
     right: 0;
@@ -45,7 +49,7 @@ nav{
 nav ul{
     height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -57,11 +61,16 @@ nav ul li{
 nav ul li a{
     color: #575757;
     font-size: 14px;
+    padding: 10px;
+    &:hover{
+        background-color: #991914;
+        border-radius: 20px;
+        padding: 10px;
+        color: #fff;
+    }
 }
 
-.select:hover{
-    color: #991914;
-}
+
 
 .nav-mod{
     height: 100px;

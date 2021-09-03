@@ -1,6 +1,6 @@
 .about{
     margin: auto;
-    margin-top: 200px;
+    margin-top: 150px;
     max-width: 1200px;
     width: 100%;
 }
@@ -102,6 +102,9 @@
     .about-info, .about-img{
         padding-bottom: 20px;
         width: 100%;
+    }
+    .container-about-2, .about-img-1{
+        height: 800px;
     }
     .about-img-2, .container-colapse{
         width: 100%;
