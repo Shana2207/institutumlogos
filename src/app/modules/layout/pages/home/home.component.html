@@ -112,44 +112,31 @@
     <div class="container-bloque-matricula">
         <div class="container-matricula"></div>
         <div class="fondo-matricula"></div>
-            
-            <div class="matricula">
-                <form action="" class="form-register">
-                    <div class="form-register__body">
-                        <div class="step active" id="step-1">
-                            <div class="step__body">
-                                <div class="custom-select">
-                                    <select>
-                                    <option value="0">Programas*</option>
-                                    <option value="1">Audi</option>
-                                    <option value="2">BMW</option>
-                                    <option value="3">Citroen</option>
-                                    </select>
-                                </div>
-                                
+        <div class="matricula">
+            <form class="form-registro" (submit)="submit()" [formGroup]="registerForm">
+                <div class="registro">
+                    <div class="parte1"></div>
+                    <div class="parte2">
+                        <div class="llenar">
+                            <div class="form-group">
+                                <input type="text" placeholder="Nombres*" class="form-control" formControlName="nombre">
+                                <input type="text" placeholder="Apellidos*" class="form-control" formControlName="apellido">
+                                <input type="tel" placeholder="Celular*" class="form-control" formControlName="celular">
+                                <input type="number" placeholder="DNI*" class="form-control" formControlName="dni">
+                                <input type="email" placeholder="Correo Electrónico*" class="form-control" formControlName="email">
                             </div>
-                            <div class="step__footer">
-                                <button type="button" class="step__button step__button--next" data-to_step="2" data-step="1">Siguiente</button>
-                            </div>
+                            <p>(*) Campos Obligatorios</p>
                         </div>
-        
-                        <div class="step" id="step-2">
-                            <div class="step__body">
-                                <input type="text" placeholder="Nombre" class="step__input">
-                                <input type="text" placeholder="Apellido" class="step__input">
-                                <input type="tel" placeholder="Teléfono" class="step__input">
-                                <input type="tel" placeholder="Teléfono" class="step__input">
-                                <input type="tel" placeholder="Teléfono" class="step__input">
-                                <p>(*) Campos Obligatorios</p>
-                            </div>
-                            <div class="step__footer">
-                                <button type="button" class="step__button step__button--back" data-to_step="1" data-step="2">Regresar</button>
-                                <button type="button" class="step__button step__button--send" data-to_step="3" data-step="2">Enviar</button>
-                            </div>
+                        <div class="botones">
+                            <button type="submit" class="button">Regresar</button>
+                            <button type="" class="button">Enviar</button>
                         </div>
                     </div>
-                </form>
-            </div>
-        
+                    
+                </div>
+                
+                
+            </form>
+        </div>
     </div>
 </app-main>

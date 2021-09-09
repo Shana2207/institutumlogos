@@ -9,7 +9,7 @@ import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { ProgramComponent } from './pages/program/program.component';
 import { InformaticaComponent } from './programs/informatica/informatica.component';
-
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 
 @NgModule({
@@ -17,9 +17,11 @@ import { InformaticaComponent } from './programs/informatica/informatica.compone
   imports: [
     CommonModule,
     RouterModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  exports:[
+  exports: [
     MainComponent
   ]
 })
