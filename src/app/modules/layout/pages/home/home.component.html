@@ -115,7 +115,16 @@
         <div class="matricula">
             <form class="form-registro" (submit)="submit()" [formGroup]="registerForm">
                 <div class="registro">
-                    <div class="parte1"></div>
+                    <div class="parte1">
+                        <select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
+                            <option value="0">Selecciona una opción</option>
+                            <option *ngFor="let dato of datos">
+                              {{dato}}
+                            </option>
+                        </select>
+                        
+                        <p [hidden]="opcionSeleccionado == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
+                    </div>
                     <div class="parte2">
                         <div class="llenar">
                             <div class="form-group">
