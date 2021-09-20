@@ -113,8 +113,9 @@
         <div class="container-matricula"></div>
         <div class="fondo-matricula"></div>
         <div class="matricula">
-            <form class="form-registro" (submit)="submit()" [formGroup]="registerForm">
+            <form class="form-registro" [formGroup]="registerForm">
                 <div class="registro">
+                    <!--
                     <div class="parte1">
                         <select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
                             <option value="0">Selecciona una opción</option>
@@ -122,23 +123,23 @@
                               {{dato}}
                             </option>
                         </select>
-                        
                         <p [hidden]="opcionSeleccionado == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
                     </div>
+                    -->
                     <div class="parte2">
                         <div class="llenar">
                             <div class="form-group">
-                                <input type="text" placeholder="Nombres*" class="form-control" formControlName="nombre">
-                                <input type="text" placeholder="Apellidos*" class="form-control" formControlName="apellido">
-                                <input type="tel" placeholder="Celular*" class="form-control" formControlName="celular">
-                                <input type="number" placeholder="DNI*" class="form-control" formControlName="dni">
-                                <input type="email" placeholder="Correo Electrónico*" class="form-control" formControlName="email">
+                                <input type="text" placeholder="Nombres*" class="form-control" [(ngModel)]="mat.nombre" formControlName="nombre">
+                                <input type="text" placeholder="Apellidos*" class="form-control" [(ngModel)]="mat.apellido" formControlName="apellido">
+                                <input type="number" placeholder="Celular*" class="form-control" [(ngModel)]="mat.celular" formControlName="celular">
+                                <input type="number" placeholder="DNI*" class="form-control" [(ngModel)]="mat.dni" formControlName="dni">
+                                <input type="email" placeholder="Correo Electrónico*" class="form-control" [(ngModel)]="mat.email" formControlName="email">
                             </div>
                             <p>(*) Campos Obligatorios</p>
                         </div>
                         <div class="botones">
-                            <button type="submit" class="button">Regresar</button>
-                            <button type="" class="button">Enviar</button>
+                            <button type="" class="button">Regresar</button>
+                            <button type="submit" class="button" (click)="agregar()">Enviar</button>
                         </div>
                     </div>
                     
@@ -149,3 +150,8 @@
         </div>
     </div>
 </app-main>
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>

@@ -11,7 +11,6 @@ import { ProgramComponent } from './pages/program/program.component';
 import { InformaticaComponent } from './programs/informatica/informatica.component';
 import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
-
 @NgModule({
   declarations: [HeaderComponent, FooterComponent, MainComponent, HomeComponent, AboutComponent, ProgramComponent, InformaticaComponent],
   imports: [

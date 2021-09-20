@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Matricula } from '../../matricula/models/matricula';
+import { MatriculaService } from '../../matricula/services/matricula.service';
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -7,31 +10,34 @@ import { FormBuilder } from '@angular/forms';
 })
 export class HomeComponent implements OnInit {
 
+  mat:Matricula = {
+    nombre:'',
+    apellido:'',
+    celular:'',
+    dni:'',
+    email:''
+  }
 
-  datos;
-  // Seleccionamos o iniciamos el valor '0' del <select>
-  opcionSeleccionado: string  = '0';
-  verSeleccion: string        = '';
-
-  constructor(private formBuilder: FormBuilder) {
-    this.datos = ['Arquitectura', 'Programación'];
+  constructor(private formBuilder: FormBuilder, private matriculaService: MatriculaService) {
+   
    }
 
-  registerForm = this.formBuilder.group({
-    nombre: [''],
-    apellido: [''],
-    celular: [''],
-    dni: [''],
-    email: [''],
+   registerForm = this.formBuilder.group({
+    nombre: ['', Validators.required],
+    apellido: ['', Validators.required],
+    celular: ['', Validators.required],
+    dni: ['', Validators.required],
+    email: ['', Validators.required]
   });
+
   ngOnInit(): void {
   }
-  submit(){
-    console.log(this.registerForm.value);
-  }
 
-  capturar() {
-    // Pasamos el valor seleccionado a la variable verSeleccion
-    this.verSeleccion = this.opcionSeleccionado;
+  agregar(){
+    if(this.registerForm.valid){
+      console.log("entro boton")
+      this.matriculaService.addMatricula(this.mat);
+      this.registerForm.reset();
     }
+  }
 }
