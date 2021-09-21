@@ -12,6 +12,7 @@ export class MatriculaService {
 
   addMatricula(matricula: Matricula){
     this.db.collection('matricula').doc().set({
+      "curso":matricula.curso,
       "nombre": matricula.nombre,
       "apellido": matricula.apellido,
       "celular": matricula.celular,

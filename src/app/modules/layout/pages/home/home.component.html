@@ -14,25 +14,25 @@
         <div class="container-col-seccion">
             <div class="container-seccion">
                 <div class="seccion">
-                    <img src ="assets/img/icono.png">
+                    <img src ="assets/img/graduado.png">
                 </div>
                 <p>Estudiantes</p>
             </div>
             <div class="container-seccion">
                 <div class="seccion">
-                    <img src ="assets/img/icono.png">
+                    <img src ="assets/img/docente.png">
                 </div>
                 <p>Docentes</p>
             </div>
             <div class="container-seccion">
                 <div class="seccion">
-                    <img src ="assets/img/icono.png">
+                    <img src ="assets/img/matricula.png">
                 </div>
                 <p>Matrícula</p>
             </div>
             <div class="container-seccion">
                 <div class="seccion">
-                    <img src ="assets/img/icono.png">
+                    <img src ="assets/img/biblioteca.png">
                 </div>
                 <p>Biblioteca</p>
             </div>
@@ -109,49 +109,88 @@
         <a routerLink="/programas" class="read-more">Ver todos los programas <i class="fas fa-arrow-right"></i></a>
     </div>
 
-    <div class="container-bloque-matricula">
+    
+    <div *ngIf="optSeleccionado == null || optSeleccionado == 0" class="container-bloque-matricula">
+        <div class="container-matricula"></div>
+        <div class="fondo-matricula-1"></div>
+        <div class="matricula">
+            <div class="parte1">
+                <div class="seleccionar">
+                    <h2>Matriculate con nosotros</h2>
+                    <div class="combo">
+                        <select name="opcionSeleccionado" [(ngModel)]="opcionSeleccionado" [(ngModel)]="mat.curso" (change)="capturar()" [value]='0'>
+                            <option [value]="" selected disabled>Programa*</option>
+                            <option [value]="item.id" [value]="item.program" *ngFor="let item of data">
+                                {{item.program}}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+    <div  *ngIf="optSeleccionado != null && optSeleccionado != 0" class="container-bloque-matricula" >
         <div class="container-matricula"></div>
         <div class="fondo-matricula"></div>
         <div class="matricula">
-            <form class="form-registro" [formGroup]="registerForm">
-                <div class="registro">
-                    <!--
-                    <div class="parte1">
-                        <select [(ngModel)]="opcionSeleccionado" (change)="capturar()">
-                            <option value="0">Selecciona una opción</option>
-                            <option *ngFor="let dato of datos">
-                              {{dato}}
-                            </option>
-                        </select>
-                        <p [hidden]="opcionSeleccionado == '0'">Haz seleccionado la opción # {{ verSeleccion }}</p>
-                    </div>
-                    -->
+            <form class="form-registro"[formGroup]="registerForm" >
+                <div class="registro">                    
                     <div class="parte2">
                         <div class="llenar">
+                            <h2>Ingresa tus datos</h2>
                             <div class="form-group">
-                                <input type="text" placeholder="Nombres*" class="form-control" [(ngModel)]="mat.nombre" formControlName="nombre">
-                                <input type="text" placeholder="Apellidos*" class="form-control" [(ngModel)]="mat.apellido" formControlName="apellido">
-                                <input type="number" placeholder="Celular*" class="form-control" [(ngModel)]="mat.celular" formControlName="celular">
-                                <input type="number" placeholder="DNI*" class="form-control" [(ngModel)]="mat.dni" formControlName="dni">
-                                <input type="email" placeholder="Correo Electrónico*" class="form-control" [(ngModel)]="mat.email" formControlName="email">
+                                <div class="datos">
+                                    <input type="text" placeholder="Nombres*" class="form-control" [(ngModel)]="mat.nombre" formControlName="nombre" required> 
+                                    <div class="errors" *ngIf="registerForm.get('nombre').invalid && (registerForm.get('nombre').touched || registerForm.get('nombre').dirty)">
+                                        <div *ngIf="registerForm.get('nombre').hasError('required')">
+                                            Ingrese sus nombres
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="datos">
+                                    <input type="text" placeholder="Apellidos*" class="form-control" [(ngModel)]="mat.apellido" formControlName="apellido" required>
+                                    <div class="errors" *ngIf="registerForm.get('apellido').invalid && (registerForm.get('apellido').touched || registerForm.get('apellido').dirty)">
+                                        <div *ngIf="registerForm.get('apellido').hasError('required')">
+                                            Ingrese sus apellidos
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="datos">
+                                    <input type="text" placeholder="Celular*" class="form-control" [(ngModel)]="mat.celular" formControlName="celular" maxlength="9" required>
+                                    <div class="errors" *ngIf="registerForm.get('celular').invalid && (registerForm.get('celular').touched || registerForm.get('celular').dirty)">
+                                        <div *ngIf="registerForm.get('celular').hasError('required')">
+                                            Ingrese su celular
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="datos">
+                                    <input type="number" placeholder="DNI*" class="form-control" [(ngModel)]="mat.dni" formControlName="dni" maxlength="8" required>
+                                    <div class="errors" *ngIf="registerForm.get('dni').invalid && (registerForm.get('dni').touched || registerForm.get('dni').dirty)">
+                                        <div *ngIf="registerForm.get('dni').hasError('required')">
+                                            Ingrese su DNI
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="datos">
+                                    <input type="email" placeholder="Correo Electrónico*" class="form-control" [(ngModel)]="mat.email" formControlName="email" required>
+                                    <div class="errors" *ngIf="registerForm.get('email').invalid && (registerForm.get('email').touched || registerForm.get('email').dirty)">
+                                        <div *ngIf="registerForm.get('email').hasError('required')">
+                                            Ingrese su email
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <p>(*) Campos Obligatorios</p>
-                        </div>
-                        <div class="botones">
-                            <button type="" class="button">Regresar</button>
-                            <button type="submit" class="button" (click)="agregar()">Enviar</button>
+                            <div class="botones">
+                                <button type="" class="button" (click)="opcionSeleccionado = 0; optSeleccionado = 0">Regresar</button>
+                                <button type="submit" class="button" (click)="agregar()">Enviar</button>
+                            </div>
                         </div>
                     </div>
-                    
                 </div>
-                
-                
             </form>
         </div>
     </div>
 </app-main>
-<!-- The core Firebase JS SDK is always required and must be listed first -->
-<script src="https://www.gstatic.com/firebasejs/8.7.1/firebase-app.js"></script>
-
-<!-- TODO: Add SDKs for Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/8.7.0/firebase-firestore.js"></script>

@@ -112,8 +112,8 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     box-shadow: 0px 4px 10px #575757;
 }
 .seccion > img{
-    height: 80px;
-    width: 80px;
+    height: 65px;
+    width: 65px;
 }
 
 
@@ -236,6 +236,17 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     background-size: cover;
     filter: brightness(70%);
 }
+.fondo-matricula-1{
+    padding: 20px 15px;
+    position: relative;
+    height: 300px;
+    max-width: 700px;
+    width: 100%;
+    opacity: 0.7;
+    background-color: #ffffff;
+    margin-left: 10%;
+    margin-right: 10%;
+}
 .fondo-matricula{
     padding: 20px 15px;
     position: relative;
@@ -269,11 +280,60 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     display: flex;
     align-items: center;
 }
+.parte1{
+    max-width: 700px;
+    width: 100%;
+    justify-content: left;
+    align-items: center;
+}
+.datos{
+    max-width: 250px;
+    width: 100%;
+}
+.seleccionar{
+    max-width: 700px;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    h2{
+        text-align: left;
+        padding: 10px;
+    }
+}
+.combo{
+    color: #575757;
+    margin: auto;
+    padding: 30px 0px;
+    max-width: 450px;
+}
+select {
+    color: #575757;
+    background: #E8E4E4;
+    border: none;
+    height: 30px;
+    padding: 5px;
+    width: 100%;
+}
+select:focus{ outline: none;}
 .parte2{
     max-width: 700px;
     justify-content: left;
     align-items: center;
 }
+.errors{
+    color: #991914;
+    font-size: 11px;
+    padding: 0 0;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    max-width: 250px;
+    width: 100%;
+    margin: 0 10px;
+}
+
 .llenar{
     max-width: 700px;
     width: 100%;
@@ -282,7 +342,10 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     align-items: center;
     padding: 50px;
     padding-bottom: 0px;
-    
+    h2{
+        text-align: left;
+        padding: 10px;
+    }
     p{
         color: #991914;
         font-size: 14px;
@@ -293,6 +356,10 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     }
 }
 .form-group {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
     input {
         background-color: transparent;
         justify-content: space-between; 
@@ -303,6 +370,8 @@ https://www.youtube.com/watch?v=TnKbhklesJY
         border: none;
         border-bottom: 1px solid #575757;
         outline: none;
+    }:required:invalid{
+        color: #991914;
     }
 }
 .botones {
@@ -327,137 +396,9 @@ https://www.youtube.com/watch?v=TnKbhklesJY
     cursor: pointer;
     box-shadow: 0px 0px 2px #991914;
 }
-
-
-
-.form-register__body{
-    max-width: 700px;
-    justify-content: left;
-    display: flex;
-    align-items: center;
-}
-.step {
-    opacity: 0;
-    min-width: 100%;
-}
-.step.active {
-    opacity: 1;
-}
-.step.to-left {
-    margin-left: -100%;
-}
-.step.inactive {
-    animation-name: scale;
-    animation-direction: alternate;
-    animation-iteration-count: 2;
-}
-@keyframes scale {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.1);
+@media screen and (max-width: 840px){
+    .fondo-matricula{
+        height: 450px;
     }
 }
-.step__body {
-    max-width: 700px;
-    width: 100%;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    padding-bottom: 0px;
-}
-.step__body p{
-    color: #991914;
-    font-size: 14px;
-    text-align: left;
-    justify-content: center;
-    align-items: center;
-    padding-bottom: 0px;
-}
-.step__input {
-    background-color: transparent;
-    justify-content: space-between; 
-    max-width: 250px;
-    width: 100%;
-    padding: 10px;
-    margin: 10px;
-    border: none;
-    border-bottom: 1px solid #575757;
-    outline: none;
-}
-.step__footer {
-    max-width: 700px;
-    width: 100%;
-    text-align: right;
-    justify-content: center;
-    align-items: center;
-    padding: 50px;
-    padding-top: 0px;
-}
-.step__button {
-    max-width: 100px;
-    width: 100%;
-    margin: 10px;
-    display: inline-block;
-    padding: 10px;
-    background-color: white;
-    border: none;
-    color: #575757;
-    border-radius: 3px;
-    cursor: pointer;
-    box-shadow: 0px 0px 2px #991914;
-}
 
-
-.custom-select {
-    position: relative;
-    margin: 10px;
-    text-align: initial;
-}  
-.custom-select select {
-    display: none;
-}
-.select-selected {
-    background-color: #E8E4E4;
-}
-.select-selected:after {
-    position: absolute;
-    content: "";
-    top: 14px;
-    right: 10px;
-    width: 0;
-    height: 0;
-    border: 6px solid transparent;
-    border-color: #575757 transparent transparent transparent;
-}
-.select-selected.select-arrow-active:after {
-    border-color: transparent transparent #575757 transparent;
-    top: 7px;
-}
-.select-items div,.select-selected {
-    color: #575757;
-    padding: 8px 16px;
-    border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
-    cursor: pointer;
-}
-.select-items {
-    position: absolute;
-    background-color: #E8E4E4;
-    top: 100%;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
-.select-hide {
-    display: none;
-}
-.select-items div:hover, .same-as-selected {
-    background-color: rgba(0, 0, 0, 0.1);
-}
-@media screen and (max-width: 760px){
-    .step{
-        max-width: 200px;
-    }
-}
